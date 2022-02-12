@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/facicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/facicon.ico"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/facicon.ico"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="The Scrappy Squirrels NFT Collection" />
+  
+  <title>Buy Me a Coffee</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+<script>
+
+  //the below code is for changing the 'You must fill out this form' message on in the textarea
+  //either solution works -- option 2 is best 
+
+  // explanation: https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message
+  // window.onload = function () {
+  //   function run() {
+  //     let form = document.getElementsByClassName('form');
+  //     let textarea = form[0].firstElementChild;
+  //     textarea.oninvalid = function (e) {
+
+  //       // e.target.setCustomValidity("");
+  //       // if (!e.target.validity.valid) {
+  //         e.target.setCustomValidity("Yo! You gotta send a message with your coffee ☕");
+  //       // }
+  //     };
+  //     textarea.oninput = function (e) {
+  //       e.target.setCustomValidity("");
+  //     };
+  //   }
+  //   setTimeout(run, 1000);
+  // }
+
+  // const observer = new MutationObserver((mutations, obs) => {
+  //   const textarea = document.getElementById('coffee-message');
+  //   if (textarea) {
+  //     textarea.oninvalid = function (e) {
+  //       e.target.setCustomValidity("Yo! You gotta send a message with your coffee ☕");
+  //     };
+  //     textarea.oninput = function (e) {
+  //       e.target.setCustomValidity("");
+  //     };
+  //     obs.disconnect();
+  //     return;
+  //   }
+  // });
+  // //mutationObserver.observe(target, options)
+  // //watch for changes on the entire document 
+  // observer.observe(document, {
+  //   childList: true, //Set to true to monitor the target node (document)
+  //   subtree: true //set to true to monitor the all target node's descendents 
+  // });
+
+</script>
+
+</html>

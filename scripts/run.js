@@ -35,9 +35,13 @@ const main = async () => {
     coffeeCount = await coffeeContract.getTotalCoffeesBought();
     console.log(`The following number of coffees have been bought: ${coffeeCount.toNumber()}`);
 
-    //buy a coffee
+    //buy myself a coffee
     // let coffeeTxn = await coffeeContract.buyCoffee('Enjoy this coffee!', ethers.utils.parseEther("0.001") )
     let coffeeTxn = await coffeeContract.buyCoffee('Enjoy this coffee!', { value: ethers.utils.parseEther('0.001') });
+    await coffeeTxn.wait();
+
+    //someone else buy me a coffee
+    coffeeTxn = await coffeeContract.connect(randomPerson).buyCoffee('Coffee 4 u!', { value: ethers.utils.parseEther('0.001') });
     await coffeeTxn.wait();
 
     //get coffee count againt
@@ -66,6 +70,14 @@ const main = async () => {
     //get my my balance to see if withdraw worked
     accountBalance = await owner.getBalance();
     console.log("Account balance: ", accountBalance.toString());
+
+    //get contract balance again
+    contractBalance = await hre.ethers.provider.getBalance(coffeeContract.address);
+    console.log(
+        "Contract balance:",
+        hre.ethers.utils.formatEther(contractBalance)
+    );
+
 
 };
 

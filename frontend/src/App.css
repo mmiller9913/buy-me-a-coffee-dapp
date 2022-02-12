@@ -30,9 +30,19 @@
 }
 
 .bio {
-  margin-top: 21px;
+  margin-top: 20px;
   text-align: center;
   font-size: 20px;
+}
+
+.test-eth {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.test-eth>a {
+  text-decoration: underline;
+  color: black;
 }
 
 .rinkeby-only {
@@ -43,7 +53,7 @@
 
 button {
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 12px 24px;
   border: 0;
   border-radius: 9999px;

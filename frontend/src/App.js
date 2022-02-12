@@ -222,7 +222,6 @@ function App() {
           <select id="coffee-message" name="emojis">
             <option value="😀">😀</option>
             <option value="😁">😁</option>
-            <option value="🤑">🤑</option>
             <option value="😎">😎</option>
             <option value="👋">👋</option>
             <option value="💪">💪</option>
@@ -242,6 +241,14 @@ function App() {
     if (currentAccount && network === "") {
       return <p className="rinkeby-only">
         Hold up! This dapp only works on the Rinkeby Test Network. To buy Matt a coffee, please switch networks in your connected wallet.
+      </p>
+    }
+  }
+
+  const renderTestEthMessage = () => {
+    if (currentAccount && network === "Rinkeby") {
+      return <p className="test-eth">
+        If you need test ETH, try using <a href="https://faucets.chain.link/rinkeby">this faucet</a>.
       </p>
     }
   }
@@ -287,7 +294,7 @@ function App() {
   // USE EFFECTS
   useEffect(() => {
     checkIfWalletIsConnected();
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //listen for chain changes
@@ -318,6 +325,8 @@ function App() {
           {renderButtonFormOrRinkebyWarning()}
 
           {/* {renderLoader()} */}
+
+          {renderTestEthMessage()}
 
           {renderCoffeeLog()}
         </div>
